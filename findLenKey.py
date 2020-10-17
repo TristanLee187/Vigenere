@@ -1,3 +1,22 @@
+# Program to generate possible lengths by considering factors of the differences of indeces of repeated words.
+# The factors are checked using a sieve of eratonsthenes style algorithm.
+#
+# To run:
+# python3 findLenKey.py text x
+# where text is the plaintext or ciphertext, and x is the length of repeated words to be considered
+#
+# Output:
+# Try more common factors as key lengths
+# The frequencies of each possible factor:
+# n1's frequency: f1
+# n2's frequency: f2
+# .
+# .
+# .
+# where n is the factor and f1 is its frequency, or the number of differences that have n as a factor.
+# The values of n are sorted by non-increasing frequency
+
+
 import sys
 # import time
 # t1=time.time()
