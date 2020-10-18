@@ -16,14 +16,14 @@ def decodeLetter(cipher,key):
     return chr(num % 26 + 65)
 
 #encode the while text
-def encodeFull():
+def encodeFull(string):
     ans = ''
     for i in range(len(string)):
         ans += encodeLetter(string[i], key[i % len(key)])
     return ans
 
 #decode the whole text
-def decodeFull():
+def decodeFull(string):
     ans=''
     for i in range(len(string)):
         ans+=decodeLetter(string[i],key[i%len(key)])
@@ -31,6 +31,6 @@ def decodeFull():
 
 print('Answer: ')
 if mode=='encode':
-    print(encodeFull())
+    print(encodeFull(string))
 else:
-    print(decodeFull())
+    print(decodeFull(string))

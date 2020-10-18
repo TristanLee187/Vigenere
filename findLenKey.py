@@ -2,14 +2,14 @@
 # The factors are checked using a sieve of eratonsthenes style algorithm.
 #
 # To run:
-# python3 findLenKey.py text x
+# $python3 findLenKey.py text x
 # where text is the plaintext or ciphertext, and x is the length of repeated words to be considered
 #
 # Output:
-# Try more common factors as key lengths
-# The frequencies of each possible factor:
-# n1's frequency: f1
-# n2's frequency: f2
+# $Try more common factors as key lengths
+# $The frequencies of each possible factor:
+# $n1's frequency: f1
+# $n2's frequency: f2
 # .
 # .
 # .
@@ -80,7 +80,7 @@ for i in range(2,int(len(sieve)**0.5)):
 #sort the freqs array by non-increasing frequency (which is the second element of each row in the list)
 freqs.sort(key=lambda entry: entry[1], reverse=True)
 
-#The result is an array of arrays of the form [factors, frequency] sorted by frequency in non-decreasing order.
+#The result is an array of arrays of the form [factors, frequency] sorted by frequency in non-increasing order.
 #Therefore, the most common factors of differences in indeces of repeated letters appears earlier in the list.
 
 #print the array in human readable format
