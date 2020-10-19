@@ -56,13 +56,13 @@ for word in words:
 # find the frequencies of all the possible factors of the differences; find the value n for every possible factor m,
 # where n is the number of differences that have m as a factor. Does this with the style of the sieve of eratosthenes
 
-#init the sieve array, where sieve[i] is 1 if i is a difference in spaces, and is 0 otherwise
+#init the sieve array, where sieve[i] counts the frequency of the difference i
 sieve=[]
 for diff in spaces:
     #extend the length of the sieve if too small; extending by a negative number does nothing; add 1 to take care of
     #0 indexing (sieve[diff] will correspond to diff rather than diff+1]
     sieve.extend((diff-len(sieve)+1)*[0])
-    sieve[diff]=1
+    sieve[diff]+=1
 
 #record the frequencies of each factor in a 2-D array
 freqs=[]
@@ -70,7 +70,6 @@ freqs=[]
 #is checked, but this is a reasonable cutoff)
 for i in range(2,int(len(sieve)**0.5)):
     #the factor i gets a value equal to the sum of the elements of sieve where its index as a multiple of i.
-    #since each of these elements is 0 or 1, the sum is equal to the number of differences with i as a factor.
     #append [i,sum] to the freqs array
     freqs.append([i,sum([sieve[j] for j in range(0,len(sieve),i)])])
 
