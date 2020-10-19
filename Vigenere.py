@@ -29,7 +29,6 @@ def decodeFull(string):
         ans+=decodeLetter(string[i],key[i%len(key)])
     return ans
 
-print('Answer: ')
 if mode=='encode':
     print(encodeFull(string))
 else:
